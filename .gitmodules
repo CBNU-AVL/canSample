@@ -1,0 +1,3 @@
+[submodule "3rdparty/CANdb"]
+	path = 3rdparty/CANdb
+	url = https://github.com/GENIVI/CANdb.git
