@@ -12,8 +12,7 @@ CanManager::CanManager(QObject *parent) : QObject(parent)
     jsonConfObj = QJsonObject();
 }
 
-bool CanManager::loadConf(QString &path)
-
+bool CanManager::loadConf(const QString &path)
 {
     QFile loadFile(path);
     if(!loadFile.open(QIODevice::ReadOnly)){

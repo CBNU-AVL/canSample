@@ -1,6 +1,22 @@
 #include "gcanmanager.h"
 #define D true
-GCanManager::GCanManager(QObject *parent) : CanManager (parent)
+GCanManager::GCanManager(QObject *parent) : CanManager (parent),
+  m_EpsEnable(false),
+  m_AccEnable(false),
+  m_AebEnable(false),
+  m_AlvCnt(0),
+  m_EpsOverrideIgnore(false),
+  m_SteerAngle(0),
+  m_SteerSpeed(150),
+  m_VehicleAccel(0),
+  m_AebDecRate(0),
+  m_MoMode(MoSeq::NONE),
+  m_MoCtrlState(MoState::ABNORMAL),
+  m_FdVehicleSpeed(0),
+  m_TargetVehicleSpeed(0),
+  m_GearSelDisp(Gear::P),
+  bActive(false),
+  timerSendMsg(nullptr)
 {
     bActive = false;
     m_AlvCnt = 0;

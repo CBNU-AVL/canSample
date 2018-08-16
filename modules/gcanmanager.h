@@ -81,19 +81,19 @@ public:
     double TargetSpeed() const { return m_TargetVehicleSpeed;}
     Gear GearSelDisp() const { return m_GearSelDisp;}
 
-    void setActive(const bool &);
-    void setEpsEnable(const bool &);
-    void setAccEnable(const bool &);
-    void setAebEnable(const bool &);
-    void setEpsOverrideIgnore(const bool &);
-    void setSteerAngle(const double &);
-    void setSteerSpeed(const quint8 &);
-    void setVehicleAccel(const double &);
-    void setAebDecRate(const double &);
-    void setTargetSpeed(const double &);
+    Q_INVOKABLE void setActive(const bool &);
+    Q_INVOKABLE void setEpsEnable(const bool &);
+    Q_INVOKABLE void setAccEnable(const bool &);
+    Q_INVOKABLE void setAebEnable(const bool &);
+    Q_INVOKABLE void setEpsOverrideIgnore(const bool &);
+    Q_INVOKABLE void setSteerAngle(const double &);
+    Q_INVOKABLE void setSteerSpeed(const quint8 &);
+    Q_INVOKABLE void setVehicleAccel(const double &);
+    Q_INVOKABLE void setAebDecRate(const double &);
+    Q_INVOKABLE void setTargetSpeed(const double &);
 
-    void resetAlvCnt();
-    void incAlvCnt();
+    Q_INVOKABLE void resetAlvCnt();
+    Q_INVOKABLE void incAlvCnt();
 
 signals:
     void ActiveChanged();

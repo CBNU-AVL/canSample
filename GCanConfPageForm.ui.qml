@@ -13,6 +13,7 @@ Page {
     readonly property int accel_MIN: -5
     readonly property int accel_MAX: 5
 
+    property alias activeCAN: switchActive.checked
     property alias steerControl: switchSteerControl.checked
     property alias accelControl: switchAccelControl.checked
     property alias steerIgnOvr: checkIgnStrOvr.checked
@@ -24,7 +25,6 @@ Page {
     header: Label {
         text: qsTr("Vehicle Control Panel")
         font.pixelSize: Qt.application.font.pixelSize * 2
-        padding: 10
     }
 
     Switch {
@@ -100,7 +100,7 @@ Page {
                 wheelEnabled: true
                 from: steer_MIN_ANGLE
                 to: steer_MAX_ANGLE
-                value: steerAngle
+                value: gcanManager.SteerAngle//steerAngle
                 anchors.horizontalCenter: parent.horizontalCenter
                 Text {
                     id: text4

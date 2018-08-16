@@ -13,7 +13,7 @@ class CanManager : public QObject
 public:
     explicit CanManager(QObject *parent = nullptr);
 
-    bool loadConf(QString &path);
+    bool loadConf(const QString &path);
     void connectDevice();
     void disconnectDevice();
     void sendRawFrame(const QCanBusFrame &frame) const;

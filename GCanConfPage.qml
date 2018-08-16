@@ -2,15 +2,26 @@ import QtQuick 2.0
 import edu.cbnu.avl.gcanmanager 0.1
 
 GCanConfPageForm {
-    //FIXIT: gcan is not accessible.
-    steerControl: gcan.EpsEnable
-    accelControl: gcan.AccEnable
-    steerIgnOvr: gcan.EpsOverrideIgnore
-    steerAngle: gcan.SteerAngle
-    steerSpeed: gcan.SteerSpeed
-    accel: gcan.VehicleAccel
+    //FIXIT: Bidirectional binding.
+    onActiveCANChanged: {
+        gcanManager.Active = activeCAN
+    }
+    onSteerControlChanged: {
+        gcanManager.EpsEnable = steerControl
+    }
+    onAccelControlChanged: {
+        gcanManager.AccEnable = accelControl
+    }
+    onSteerIgnOvrChanged: {
+        gcanManager.EpsOverrideIgnore = steerIgnOvr
+    }
+    onSteerAngleChanged: {
+        gcanManager.SteerAngle = steerAngle
+    }
+    onSteerSpeedChanged: {
+        gcanManager.SteerSpeed = steerSpeed
+    }
     onAccelChanged: {
-        gcan.setVehicleAccel(accel)
-        console.log(gcan.VehicleAccel)
+        gcanManager.VehicleAccel = accel
     }
 }
